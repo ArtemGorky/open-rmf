@@ -284,6 +284,11 @@ class RobotAdapter:
                     cmd=self.api.toggle_attach, args=(
                         self.name, False, self.cmd_id)
                 )
+	    case 'identification':
+		self.attempt_cmd_until_success(
+		cmd=self.api.toggle_attach, args=(
+		    description['point']
+		)
 
     def finish_action(self):
         # This is triggered by a ModeRequest callback which allows human
