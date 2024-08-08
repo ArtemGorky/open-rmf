@@ -286,7 +286,7 @@ class RobotAdapter:
                 )
             case 'identification':
                 self.attempt_cmd_until_success(
-		            cmd=self.perform_identification, args=(description['point'])
+		    cmd=self.perform_identification, args=(description['point'],)
                 )
 
     def finish_action(self):
