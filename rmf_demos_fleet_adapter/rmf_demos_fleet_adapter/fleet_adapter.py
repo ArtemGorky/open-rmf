@@ -284,11 +284,10 @@ class RobotAdapter:
                     cmd=self.api.toggle_attach, args=(
                         self.name, False, self.cmd_id)
                 )
-	    case 'identification':
-		self.attempt_cmd_until_success(
-		cmd=self.api.toggle_attach, args=(
-		    description['point']
-		)
+            case 'identification':
+                self.attempt_cmd_until_success(
+		            cmd=self.perform_identification, args=(description['point'])
+                )
 
     def finish_action(self):
         # This is triggered by a ModeRequest callback which allows human
@@ -340,6 +339,27 @@ class RobotAdapter:
                 self.node.get_logger().error(
                     f'Fleet manager for [{self.name}] does not know how to '
                     f'clean zone [{zone}]. We will terminate the activity.'
+                )
+                self.execution.finished()
+                self.execution = None
+                return True
+    
+    def perform_identification(self, point):
+        match self.api.start_activity(self.name, self.cmd_id, 'identification', point):
+            case (RobotAPIResult.SUCCESS, path):
+                self.node.get_logger().info(
+                    f'Robot [{self.name}] try identification [{point}]'
+                )
+                self.override = self.execution.override_schedule(
+                    path['map_name'], path['path']
+                )
+                return True
+            case RobotAPIResult.RETRY:
+                return False
+            case RobotAPIResult.IMPOSSIBLE:
+                self.node.get_logger().error(
+                    f'Fleet manager for [{self.name}] does not know how to '
+                    f'try identification [{point}]. We will terminate the activity.'
                 )
                 self.execution.finished()
                 self.execution = None
