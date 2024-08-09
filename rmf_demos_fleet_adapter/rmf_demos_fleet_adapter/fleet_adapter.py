@@ -204,9 +204,12 @@ class RobotAdapter:
     def update(self, state, data: RobotUpdateData):
         activity_identifier = None
         if self.execution:
+            self.node.get_logger().warn(
+                f'Test update execution identifier: [{self.execution.identifier}] cmd_id: [{self.cmd_id}]'
+            )    
             if data.is_command_completed(self.cmd_id):
                 self.node.get_logger().warn(
-                     f'Test update identifier: [{self.execution.identifier}] cmd_id: [{self.cmd_id}]'
+                     f'Test update is_command_completed identifier: [{self.execution.identifier}] cmd_id: [{self.cmd_id}]'
                  )                
                 self.execution.finished()
                 self.execution = None
@@ -374,6 +377,9 @@ class RobotAdapter:
             case (RobotAPIResult.SUCCESS, path):
                 self.node.get_logger().info(
                     f'Robot [{self.name}] try identification [{point}]'
+                )
+                self.node.get_logger().info(
+                    f'data: [{path}]'
                 )
                 #self.override = self.execution.override_schedule(
                 #    path['map_name'], path['path']

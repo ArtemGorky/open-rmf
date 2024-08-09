@@ -112,7 +112,7 @@ class RobotAPI:
         data = {'activity': activity, 'label': label}
         try:
             print(f'Test start_activity data: [{data}]') 
-            time.sleep(2.0)
+            time.sleep(1.0)
             return (
                     RobotAPIResult.SUCCESS,
                     data,
