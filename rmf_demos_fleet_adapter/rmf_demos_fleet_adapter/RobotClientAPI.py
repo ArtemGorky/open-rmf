@@ -22,6 +22,7 @@ you will need to make http request calls to the appropriate endpoints within
 these functions.
 """
 import enum
+import time
 from urllib.error import HTTPError
 
 import requests
@@ -110,6 +111,14 @@ class RobotAPI:
         # data fields: task, map_name, destination{}, data{}
         data = {'activity': activity, 'label': label}
         try:
+            self.node.get_logger().warn(
+                 f'Test start_activity data: [{data}]'
+            ) 
+            time.sleep(2.0)
+            return (
+                    RobotAPIResult.SUCCESS,
+                    data,
+                ) 
             response = requests.post(url, timeout=self.timeout, json=data)
             response.raise_for_status()
             if self.debug:

@@ -205,7 +205,6 @@ class RobotAdapter:
         activity_identifier = None
         if self.execution:
             if data.is_command_completed(self.cmd_id):
-                #тест симуляции задержки
                 self.node.get_logger().warn(
                      f'Test update identifier: [{self.execution.identifier}] cmd_id: [{self.cmd_id}]'
                  )                
@@ -362,34 +361,34 @@ class RobotAdapter:
     
     def perform_identification(self, point):
 
-        self.node.get_logger().warn(
-            f'HUUUUUURAAAAA Identification is worked'
-        )
+       # self.node.get_logger().warn(
+       #     f'HUUUUUURAAAAA Identification is worked'
+       # )
 
-        self.execution.finished()
-        self.execution = None
-        return True
+        #self.execution.finished()
+        #self.execution = None
+        #return True
 
 
-        #match self.api.start_activity(self.name, self.cmd_id, 'identification', point):
-        #    case (RobotAPIResult.SUCCESS, path):
-        #        self.node.get_logger().info(
-        #            f'Robot [{self.name}] try identification [{point}]'
-        #        )
-        #        self.override = self.execution.override_schedule(
-        #            path['map_name'], path['path']
-        #        )
-        #        return True
-        #    case RobotAPIResult.RETRY:
-        #        return False
-        #    case RobotAPIResult.IMPOSSIBLE:
-        #        self.node.get_logger().error(
-        #            f'Fleet manager for [{self.name}] does not know how to '
-        #            f'try identification [{point}]. We will terminate the activity.'
-        #        )
-        #        self.execution.finished()
-        #        self.execution = None
-        #        return True
+        match self.api.start_activity(self.name, self.cmd_id, 'identification', point):
+            case (RobotAPIResult.SUCCESS, path):
+                self.node.get_logger().info(
+                    f'Robot [{self.name}] try identification [{point}]'
+                )
+                self.override = self.execution.override_schedule(
+                    path['map_name'], path['path']
+                )
+                return True
+            case RobotAPIResult.RETRY:
+                return False
+            case RobotAPIResult.IMPOSSIBLE:
+                self.node.get_logger().error(
+                    f'Fleet manager for [{self.name}] does not know how to '
+                    f'try identification [{point}]. We will terminate the activity.'
+                )
+                self.execution.finished()
+                self.execution = None
+                return True
 
     def perform_fork_up(self):
 
