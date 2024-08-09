@@ -203,10 +203,7 @@ class RobotAdapter:
 
     def update(self, state, data: RobotUpdateData):
         activity_identifier = None
-        if self.execution:
-            self.node.get_logger().warn(
-                f'Test update execution identifier: [{self.execution.identifier}] cmd_id: [{self.cmd_id}]'
-            )    
+        if self.execution:  
             if data.is_command_completed(self.cmd_id):
                 self.node.get_logger().warn(
                      f'Test update is_command_completed identifier: [{self.execution.identifier}] cmd_id: [{self.cmd_id}]'
