@@ -345,25 +345,35 @@ class RobotAdapter:
                 return True
     
     def perform_identification(self, point):
-        match self.api.start_activity(self.name, self.cmd_id, 'identification', point):
-            case (RobotAPIResult.SUCCESS, path):
-                self.node.get_logger().info(
-                    f'Robot [{self.name}] try identification [{point}]'
-                )
-                self.override = self.execution.override_schedule(
-                    path['map_name'], path['path']
-                )
-                return True
-            case RobotAPIResult.RETRY:
-                return False
-            case RobotAPIResult.IMPOSSIBLE:
-                self.node.get_logger().error(
-                    f'Fleet manager for [{self.name}] does not know how to '
-                    f'try identification [{point}]. We will terminate the activity.'
-                )
-                self.execution.finished()
-                self.execution = None
-                return True
+
+        self.node.get_logger().warn(
+            f'HUUUUUURAAAAA Identification is worked'
+        )
+
+        self.execution.finished()
+        self.execution = None
+        return True
+
+
+        #match self.api.start_activity(self.name, self.cmd_id, 'identification', point):
+        #    case (RobotAPIResult.SUCCESS, path):
+        #        self.node.get_logger().info(
+        #            f'Robot [{self.name}] try identification [{point}]'
+        #        )
+        #        self.override = self.execution.override_schedule(
+        #            path['map_name'], path['path']
+        #        )
+        #        return True
+        #    case RobotAPIResult.RETRY:
+        #        return False
+        #    case RobotAPIResult.IMPOSSIBLE:
+        #        self.node.get_logger().error(
+        #            f'Fleet manager for [{self.name}] does not know how to '
+        #            f'try identification [{point}]. We will terminate the activity.'
+        #        )
+        #        self.execution.finished()
+        #        self.execution = None
+        #        return True
 
     def attempt_cmd_until_success(self, cmd, args):
         self.cancel_cmd_attempt()
