@@ -375,9 +375,9 @@ class RobotAdapter:
                 self.node.get_logger().info(
                     f'Robot [{self.name}] try identification [{point}]'
                 )
-                self.override = self.execution.override_schedule(
-                    path['map_name'], path['path']
-                )
+                #self.override = self.execution.override_schedule(
+                #    path['map_name'], path['path']
+                #)
                 return True
             case RobotAPIResult.RETRY:
                 return False
