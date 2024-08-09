@@ -111,9 +111,7 @@ class RobotAPI:
         # data fields: task, map_name, destination{}, data{}
         data = {'activity': activity, 'label': label}
         try:
-            self.node.get_logger().warn(
-                 f'Test start_activity data: [{data}]'
-            ) 
+            print(f'Test start_activity data: [{data}]') 
             time.sleep(2.0)
             return (
                     RobotAPIResult.SUCCESS,
