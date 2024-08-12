@@ -112,7 +112,6 @@ class RobotAPI:
         data = {'activity': activity, 'label': label}
         try:
             print(f'Test start_activity data: [{data}]') 
-            time.sleep(1.0)
             return (
                     RobotAPIResult.SUCCESS,
                     data,
@@ -255,4 +254,4 @@ class RobotUpdateData:
 
     def is_command_completed(self, cmd_id):
         return self.last_request_completed == cmd_id
-
+    
