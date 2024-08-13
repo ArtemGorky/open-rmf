@@ -298,7 +298,7 @@ class RobotAdapter:
                 )
             case 'laser_back':
                 self.attempt_cmd_until_success(
-		    cmd=self.perform_backward_to, args=(description['point'],)
+		    cmd=self.perform_laser_back, args=(description['point'],)
                 )
             case 'move_to':
                 self.attempt_cmd_until_success(
