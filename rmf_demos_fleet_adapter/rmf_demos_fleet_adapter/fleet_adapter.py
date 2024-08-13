@@ -363,7 +363,7 @@ class RobotAdapter:
     def perform_tray_identification(self, point):
 
         self.node.get_logger().warn(
-            f'HUUUUUURAAAAA Identification is worked'
+            f'1---HUUUUUURAAAAA Identification is worked'
         )
         self.execution.finished()
         self.execution = None
