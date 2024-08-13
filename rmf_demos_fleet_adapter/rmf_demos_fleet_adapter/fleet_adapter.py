@@ -284,21 +284,25 @@ class RobotAdapter:
                     cmd=self.api.toggle_attach, args=(
                         self.name, False, self.cmd_id)
                 )
-            case 'identification':
+            case 'tray_identification':
                 self.attempt_cmd_until_success(
 		    cmd=self.perform_identification, args=(description['point'],)
                 )
-            case 'fork_up':
+            case 'jacking':
                 self.attempt_cmd_until_success(
-		    cmd=self.perform_fork_up,
+		    cmd=self.perform_jacking,
                 )
-            case 'fork_down':
+            case 'drop':
                 self.attempt_cmd_until_success(
-		    cmd=self.perform_fork_down,
+		    cmd=self.perform_drop,
                 )
-            case 'backward_to':
+            case 'laser_back':
                 self.attempt_cmd_until_success(
 		    cmd=self.perform_backward_to, args=(description['point'],)
+                )
+            case 'move_to':
+                self.attempt_cmd_until_success(
+		    cmd=self.perform_move_to, args=(description['point'],)
                 )
 
     def finish_action(self):
@@ -356,21 +360,21 @@ class RobotAdapter:
                 self.execution = None
                 return True
     
-    def perform_identification(self, point):
+    def perform_tray_identification(self, point):
 
         self.node.get_logger().warn(
             f'HUUUUUURAAAAA Identification is worked'
         )
-        time.sleep(15.0)
+        time.sleep(10.0)
         self.execution.finished()
         self.execution = None
         return True
 
 
-      # match self.api.start_activity(self.name, self.cmd_id, 'identification', point):
+      # match self.api.start_activity(self.name, self.cmd_id, 'tray_identification', point):
       #       case (RobotAPIResult.SUCCESS, path):
       #          self.node.get_logger().info(
-      #              f'Robot [{self.name}] try identification [{point}]'
+      #              f'Robot [{self.name}] try tray_identification [{point}]'
       #          )
       #          self.node.get_logger().info(
       #              f'data: [{path}]'
@@ -384,16 +388,16 @@ class RobotAdapter:
       #      case RobotAPIResult.IMPOSSIBLE:
       #          self.node.get_logger().error(
       #              f'Fleet manager for [{self.name}] does not know how to '
-      #              f'try identification [{point}]. We will terminate the activity.'
+      #              f'try tray_identification [{point}]. We will terminate the activity.'
       #          )
       #          self.execution.finished()
       #        self.execution = None
-      #          return True"""
+      #          return True
 
-    def perform_fork_up(self):
+    def perform_jacking(self):
 
         self.node.get_logger().warn(
-            f'HUUUUUURAAAAA fork_up is worked'
+            f'HUUUUUURAAAAA jacking is worked'
         )
         time.sleep(5.0)
         self.execution.finished()
@@ -401,10 +405,10 @@ class RobotAdapter:
         return True
 
 
-        #match self.api.start_activity(self.name, self.cmd_id, 'fork_up'):
+        #match self.api.start_activity(self.name, self.cmd_id, 'jacking'):
         #    case (RobotAPIResult.SUCCESS, path):
         #        self.node.get_logger().info(
-        #            f'Robot [{self.name}] fork up'
+        #            f'Robot [{self.name}] jacking'
         #        )
         #        self.override = self.execution.override_schedule(
         #            path['map_name'], path['path']
@@ -415,16 +419,16 @@ class RobotAdapter:
         #    case RobotAPIResult.IMPOSSIBLE:
         #        self.node.get_logger().error(
         #            f'Fleet manager for [{self.name}] does not know how to '
-        #            f'try fork up. We will terminate the activity.'
+        #            f'try jacking. We will terminate the activity.'
         #        )
         #        self.execution.finished()
         #        self.execution = None
         #        return True
 
-    def perform_fork_down(self):
+    def perform_drop(self):
 
         self.node.get_logger().warn(
-            f'HUUUUUURAAAAA fork_down is worked'
+            f'HUUUUUURAAAAA drop is worked'
         )
         time.sleep(5.0)
         self.execution.finished()
@@ -432,10 +436,10 @@ class RobotAdapter:
         return True
 
 
-        #match self.api.start_activity(self.name, self.cmd_id, 'fork_down'):
+        #match self.api.start_activity(self.name, self.cmd_id, 'drop'):
         #    case (RobotAPIResult.SUCCESS, path):
         #        self.node.get_logger().info(
-        #            f'Robot [{self.name}] fork down'
+        #            f'Robot [{self.name}] drop'
         #        )
         #        self.override = self.execution.override_schedule(
         #            path['map_name'], path['path']
@@ -446,27 +450,27 @@ class RobotAdapter:
         #    case RobotAPIResult.IMPOSSIBLE:
         #        self.node.get_logger().error(
         #            f'Fleet manager for [{self.name}] does not know how to '
-        #            f'try fork down. We will terminate the activity.'
+        #            f'try drop. We will terminate the activity.'
         #        )
         #        self.execution.finished()
         #        self.execution = None
         #        return True
-
-    def perform_backward_to(self, point):
+    
+    def perform_move_to(self,point):
 
         self.node.get_logger().warn(
-            f'HUUUUUURAAAAA backward_to is worked'
+            f'HUUUUUURAAAAA move_to is worked'
         )
-        time.sleep(5.0)
+        time.sleep(15.0)
         self.execution.finished()
         self.execution = None
         return True
 
 
-        #match self.api.start_activity(self.name, self.cmd_id, 'backward_to', point):
+        #match self.api.start_activity(self.name, self.cmd_id, 'move_to', point):
         #    case (RobotAPIResult.SUCCESS, path):
         #        self.node.get_logger().info(
-        #            f'Robot [{self.name}] backward to [{point}]'
+        #            f'Robot [{self.name}] move_to [{point}]'
         #        )
         #        self.override = self.execution.override_schedule(
         #            path['map_name'], path['path']
@@ -477,7 +481,38 @@ class RobotAdapter:
         #    case RobotAPIResult.IMPOSSIBLE:
         #        self.node.get_logger().error(
         #            f'Fleet manager for [{self.name}] does not know how to '
-        #            f'backward to [{point}]. We will terminate the activity.'
+        #            f'try move_to [{point}]. We will terminate the activity.'
+        #        )
+        #        self.execution.finished()
+        #        self.execution = None
+        #        return True
+    
+    def perform_laser_back(self, point):
+
+        self.node.get_logger().warn(
+            f'HUUUUUURAAAAA laser_back is worked'
+        )
+        time.sleep(5.0)
+        self.execution.finished()
+        self.execution = None
+        return True
+
+
+        #match self.api.start_activity(self.name, self.cmd_id, 'laser_back', point):
+        #    case (RobotAPIResult.SUCCESS, path):
+        #        self.node.get_logger().info(
+        #            f'Robot [{self.name}] laser_back [{point}]'
+        #        )
+        #        self.override = self.execution.override_schedule(
+        #            path['map_name'], path['path']
+        #        )
+        #        return True
+        #    case RobotAPIResult.RETRY:
+        #        return False
+        #    case RobotAPIResult.IMPOSSIBLE:
+        #        self.node.get_logger().error(
+        #            f'Fleet manager for [{self.name}] does not know how to '
+        #            f'laser_back [{point}]. We will terminate the activity.'
         #        )
         #        self.execution.finished()
         #        self.execution = None
