@@ -365,7 +365,6 @@ class RobotAdapter:
         self.node.get_logger().warn(
             f'HUUUUUURAAAAA Identification is worked'
         )
-        time.sleep(10.0)
         self.execution.finished()
         self.execution = None
         return True
@@ -399,7 +398,6 @@ class RobotAdapter:
         self.node.get_logger().warn(
             f'HUUUUUURAAAAA jacking is worked'
         )
-        time.sleep(5.0)
         self.execution.finished()
         self.execution = None
         return True
@@ -461,7 +459,6 @@ class RobotAdapter:
         self.node.get_logger().warn(
             f'HUUUUUURAAAAA move_to is worked'
         )
-        time.sleep(15.0)
         self.execution.finished()
         self.execution = None
         return True
@@ -492,7 +489,6 @@ class RobotAdapter:
         self.node.get_logger().warn(
             f'HUUUUUURAAAAA laser_back is worked'
         )
-        time.sleep(5.0)
         self.execution.finished()
         self.execution = None
         return True
