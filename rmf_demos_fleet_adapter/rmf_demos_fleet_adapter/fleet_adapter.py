@@ -428,7 +428,6 @@ class RobotAdapter:
         self.node.get_logger().warn(
             f'HUUUUUURAAAAA drop is worked'
         )
-        time.sleep(5.0)
         self.execution.finished()
         self.execution = None
         return True
