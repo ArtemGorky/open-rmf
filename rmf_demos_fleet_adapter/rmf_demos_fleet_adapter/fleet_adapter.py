@@ -290,11 +290,11 @@ class RobotAdapter:
                 )
             case 'jacking':
                 self.attempt_cmd_until_success(
-		    cmd=self.perform_jacking,
+		    cmd=self.perform_jacking, args = None
                 )
             case 'drop':
                 self.attempt_cmd_until_success(
-		    cmd=self.perform_drop,
+		    cmd=self.perform_drop, args = None
                 )
             case 'laser_back':
                 self.attempt_cmd_until_success(
