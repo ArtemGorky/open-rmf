@@ -286,7 +286,7 @@ class RobotAdapter:
                 )
             case 'tray_identification':
                 self.attempt_cmd_until_success(
-		    cmd=self.perform_identification, args=(description['point'],)
+		    cmd=self.perform_tray_identification, args=(description['point'],)
                 )
             case 'jacking':
                 self.attempt_cmd_until_success(
