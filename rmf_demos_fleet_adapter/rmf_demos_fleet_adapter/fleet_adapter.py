@@ -290,11 +290,11 @@ class RobotAdapter:
                 )
             case 'jacking':
                 self.attempt_cmd_until_success(
-		    cmd=self.perform_jacking, args = None
+		    cmd=self.perform_jacking, args = (description['point'],)
                 )
             case 'drop':
                 self.attempt_cmd_until_success(
-		    cmd=self.perform_drop, args = None
+		    cmd=self.perform_drop, args = (description['point'],)
                 )
             case 'laser_back':
                 self.attempt_cmd_until_success(
@@ -393,7 +393,7 @@ class RobotAdapter:
        #        self.execution = None
        #          return True
 
-    def perform_jacking(self):
+    def perform_jacking(self,point):
 
         self.node.get_logger().warn(
             f'HUUUUUURAAAAA jacking is worked'
@@ -423,7 +423,7 @@ class RobotAdapter:
         #        self.execution = None
         #        return True
 
-    def perform_drop(self):
+    def perform_drop(self,point):
 
         self.node.get_logger().warn(
             f'HUUUUUURAAAAA drop is worked'
