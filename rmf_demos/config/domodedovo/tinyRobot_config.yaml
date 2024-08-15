@@ -35,21 +35,102 @@ rmf_fleet:
   responsive_wait: True # Should responsive wait be on/off for the whole fleet by default? False if not specified.
   reassign_task_interval: 120 # seconds, specify how often a task reassignment should be triggered in the fleet
   robots:
-    tinyRobot1:
-        charger: "tinyRobot1_charger"
-        responsive_wait: True # Should responsive wait be on/off for this specific robot? Overrides the fleet-wide setting.
+robots:
+  F1PRO2.2D-231:
+      charger: "F1PRO2.2D-231_charger"
+      responsive_wait: True
 
-    tinyRobot2:
-        charger: "tinyRobot2_charger"
-        responsive_wait: True # Should responsive wait be on/off for this specific robot? Overrides the fleet-wide setting. 
+  F1PRO2.2D-232:
+      charger: "F1PRO2.2D-232_charger"
+      responsive_wait: True
 
-    tinyRobot3:
-        charger: "tinyRobot3_charger"
-        responsive_wait: True # Should responsive wait be on/off for this specific robot? Overrides the fleet-wide setting.
-    
-    tinyRobot4:
-        charger: "tinyRobot3_charger"
-        responsive_wait: True # Should responsive wait be on/off for this specific robot? Overrides the fleet-wide setting.  
+  F1PRO2.2D-233:
+      charger: "F1PRO2.2D-233_charger"
+      responsive_wait: True
+
+  F1PRO2.2D-234:
+      charger: "F1PRO2.2D-234_charger"
+      responsive_wait: True
+
+  F1PRO2.2D-235:
+      charger: "F1PRO2.2D-235_charger"
+      responsive_wait: True
+
+  F1PRO2.2D-236:
+      charger: "F1PRO2.2D-236_charger"
+      responsive_wait: True
+
+  F1PRO2.2D-237:
+      charger: "F1PRO2.2D-237_charger"
+      responsive_wait: True
+
+  F1PRO2.2D-238:
+      charger: "F1PRO2.2D-238_charger"
+      responsive_wait: True
+
+  F1PRO2.2D-239:
+      charger: "F1PRO2.2D-239_charger"
+      responsive_wait: True
+
+  F1PRO2.2D-240:
+      charger: "F1PRO2.2D-240_charger"
+      responsive_wait: True
+
+  F1PRO2.2D-241:
+      charger: "F1PRO2.2D-241_charger"
+      responsive_wait: True
+
+  F1PRO2.2D-242:
+      charger: "F1PRO2.2D-242_charger"
+      responsive_wait: True
+
+  F1PRO2.2D-243:
+      charger: "F1PRO2.2D-243_charger"
+      responsive_wait: True
+
+  F1PRO2.2D-244:
+      charger: "F1PRO2.2D-244_charger"
+      responsive_wait: True
+
+  F1PRO2.2D-245:
+      charger: "F1PRO2.2D-245_charger"
+      responsive_wait: True
+
+  F1PRO2.2D-246:
+      charger: "F1PRO2.2D-246_charger"
+      responsive_wait: True
+
+  F1PRO2.2D-247:
+      charger: "F1PRO2.2D-247_charger"
+      responsive_wait: True
+
+  F1PRO2.2D-248:
+      charger: "F1PRO2.2D-248_charger"
+      responsive_wait: True
+
+  F1PRO2.2D-249:
+      charger: "F1PRO2.2D-249_charger"
+      responsive_wait: True
+
+  F1PRO2.2D-250:
+      charger: "F1PRO2.2D-250_charger"
+      responsive_wait: True
+
+  F1PRO2.2D-251:
+      charger: "F1PRO2.2D-251_charger"
+      responsive_wait: True
+
+  F1PRO2.2D-252:
+      charger: "F1PRO2.2D-252_charger"
+      responsive_wait: True
+
+  F1PRO2.2D-253:
+      charger: "F1PRO2.2D-253_charger"
+      responsive_wait: True
+
+  F1PRO2.2D-254:
+      charger: "F1PRO2.2D-254_charger"
+      responsive_wait: True
 fleet_manager:
   ip: "127.0.0.1"
   port: 22011
