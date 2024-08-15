@@ -35,102 +35,100 @@ rmf_fleet:
   responsive_wait: True # Should responsive wait be on/off for the whole fleet by default? False if not specified.
   reassign_task_interval: 120 # seconds, specify how often a task reassignment should be triggered in the fleet
   robots:
-robots:
-  F1PRO2.2D-231:
-      charger: "F1PRO2.2D-231_charger"
-      responsive_wait: True
+    tinyRobot1:
+        charger: "tinyRobot1_charger"
+        responsive_wait: True # Should responsive wait be on/off for this specific robot? Overrides the fleet-wide setting.
 
-  F1PRO2.2D-232:
-      charger: "F1PRO2.2D-232_charger"
-      responsive_wait: True
+    tinyRobot2:
+        charger: "tinyRobot2_charger"
+        responsive_wait: True # Should responsive wait be on/off for this specific robot? Overrides the fleet-wide setting. 
 
-  F1PRO2.2D-233:
-      charger: "F1PRO2.2D-233_charger"
-      responsive_wait: True
+    tinyRobot3:
+        charger: "tinyRobot3_charger"
+        responsive_wait: True # Should responsive wait be on/off for this specific robot? Overrides the fleet-wide setting.
+    
+    tinyRobot4:
+        charger: "tinyRobot4_charger"
+        responsive_wait: True # Should responsive wait be on/off for this specific robot? Overrides the fleet-wide setting.
+    
+    tinyRobot5:
+        charger: "tinyRobot5_charger"
+        responsive_wait: True # Should responsive wait be on/off for this specific robot? Overrides the fleet-wide setting.
 
-  F1PRO2.2D-234:
-      charger: "F1PRO2.2D-234_charger"
-      responsive_wait: True
+    tinyRobot6:
+        charger: "tinyRobot6_charger"
+        responsive_wait: True # Should responsive wait be on/off for this specific robot? Overrides the fleet-wide setting. 
 
-  F1PRO2.2D-235:
-      charger: "F1PRO2.2D-235_charger"
-      responsive_wait: True
+    tinyRobot7:
+        charger: "tinyRobot7_charger"
+        responsive_wait: True # Should responsive wait be on/off for this specific robot? Overrides the fleet-wide setting.
+    
+    tinyRobot8:
+        charger: "tinyRobot8_charger"
+        responsive_wait: True # Should responsive wait be on/off for this specific robot? Overrides the fleet-wide setting.
+    tinyRobot9:
+        charger: "tinyRobot9_charger"
+        responsive_wait: True # Should responsive wait be on/off for this specific robot? Overrides the fleet-wide setting.
 
-  F1PRO2.2D-236:
-      charger: "F1PRO2.2D-236_charger"
-      responsive_wait: True
+    tinyRobot10:
+        charger: "tinyRobot10_charger"
+        responsive_wait: True # Should responsive wait be on/off for this specific robot? Overrides the fleet-wide setting. 
 
-  F1PRO2.2D-237:
-      charger: "F1PRO2.2D-237_charger"
-      responsive_wait: True
+    tinyRobot11:
+        charger: "tinyRobot11_charger"
+        responsive_wait: True # Should responsive wait be on/off for this specific robot? Overrides the fleet-wide setting.
+    
+    tinyRobot12:
+        charger: "tinyRobot12_charger"
+        responsive_wait: True # Should responsive wait be on/off for this specific robot? Overrides the fleet-wide setting.
+    
+    tinyRobot13:
+        charger: "tinyRobot13_charger"
+        responsive_wait: True # Should responsive wait be on/off for this specific robot? Overrides the fleet-wide setting.
 
-  F1PRO2.2D-238:
-      charger: "F1PRO2.2D-238_charger"
-      responsive_wait: True
+    tinyRobot14:
+        charger: "tinyRobot14_charger"
+        responsive_wait: True # Should responsive wait be on/off for this specific robot? Overrides the fleet-wide setting. 
 
-  F1PRO2.2D-239:
-      charger: "F1PRO2.2D-239_charger"
-      responsive_wait: True
+    tinyRobot15:
+        charger: "tinyRobot15_charger"
+        responsive_wait: True # Should responsive wait be on/off for this specific robot? Overrides the fleet-wide setting.
+    
+    tinyRobot16:
+        charger: "tinyRobot16_charger"
+        responsive_wait: True # Should responsive wait be on/off for this specific robot? Overrides the fleet-wide setting.
+    tinyRobot17:
+        charger: "tinyRobot17_charger"
+        responsive_wait: True # Should responsive wait be on/off for this specific robot? Overrides the fleet-wide setting.
 
-  F1PRO2.2D-240:
-      charger: "F1PRO2.2D-240_charger"
-      responsive_wait: True
+    tinyRobot18:
+        charger: "tinyRobot18_charger"
+        responsive_wait: True # Should responsive wait be on/off for this specific robot? Overrides the fleet-wide setting. 
 
-  F1PRO2.2D-241:
-      charger: "F1PRO2.2D-241_charger"
-      responsive_wait: True
+    tinyRobot19:
+        charger: "tinyRobot19_charger"
+        responsive_wait: True # Should responsive wait be on/off for this specific robot? Overrides the fleet-wide setting.
+    
+    tinyRobot20:
+        charger: "tinyRobot20_charger"
+        responsive_wait: True # Should responsive wait be on/off for this specific robot? Overrides the fleet-wide setting.
+    
+    tinyRobot21:
+        charger: "tinyRobot21_charger"
+        responsive_wait: True # Should responsive wait be on/off for this specific robot? Overrides the fleet-wide setting.
 
-  F1PRO2.2D-242:
-      charger: "F1PRO2.2D-242_charger"
-      responsive_wait: True
+    tinyRobot22:
+        charger: "tinyRobot22_charger"
+        responsive_wait: True # Should responsive wait be on/off for this specific robot? Overrides the fleet-wide setting. 
 
-  F1PRO2.2D-243:
-      charger: "F1PRO2.2D-243_charger"
-      responsive_wait: True
-
-  F1PRO2.2D-244:
-      charger: "F1PRO2.2D-244_charger"
-      responsive_wait: True
-
-  F1PRO2.2D-245:
-      charger: "F1PRO2.2D-245_charger"
-      responsive_wait: True
-
-  F1PRO2.2D-246:
-      charger: "F1PRO2.2D-246_charger"
-      responsive_wait: True
-
-  F1PRO2.2D-247:
-      charger: "F1PRO2.2D-247_charger"
-      responsive_wait: True
-
-  F1PRO2.2D-248:
-      charger: "F1PRO2.2D-248_charger"
-      responsive_wait: True
-
-  F1PRO2.2D-249:
-      charger: "F1PRO2.2D-249_charger"
-      responsive_wait: True
-
-  F1PRO2.2D-250:
-      charger: "F1PRO2.2D-250_charger"
-      responsive_wait: True
-
-  F1PRO2.2D-251:
-      charger: "F1PRO2.2D-251_charger"
-      responsive_wait: True
-
-  F1PRO2.2D-252:
-      charger: "F1PRO2.2D-252_charger"
-      responsive_wait: True
-
-  F1PRO2.2D-253:
-      charger: "F1PRO2.2D-253_charger"
-      responsive_wait: True
-
-  F1PRO2.2D-254:
-      charger: "F1PRO2.2D-254_charger"
-      responsive_wait: True
+    tinyRobot23:
+        charger: "tinyRobot23_charger"
+        responsive_wait: True # Should responsive wait be on/off for this specific robot? Overrides the fleet-wide setting.
+    
+    tinyRobot24:
+        charger: "tinyRobot24_charger"
+        responsive_wait: True # Should responsive wait be on/off for this specific robot? Overrides the fleet-wide setting.
+  
 fleet_manager:
   ip: "127.0.0.1"
   port: 22011
