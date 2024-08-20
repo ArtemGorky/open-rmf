@@ -35,11 +35,100 @@ rmf_fleet:
   reassign_task_interval: 120 # seconds, specify how often a task reassignment should be triggered in the fleet
   robots:
     tinyRobot1:
-        charger: "tinyRobot1_charger"
-        responsive_wait: False # Should responsive wait be on/off for this specific robot? Overrides the fleet-wide setting.
+        charger: "dock_1"
+        responsive_wait: True # Should responsive wait be on/off for this specific robot? Overrides the fleet-wide setting.
+
     tinyRobot2:
-        charger: "tinyRobot2_charger"
-        # No mention of responsive_wait means the fleet-wide setting will be used
+        charger: "dock_2"
+        responsive_wait: True # Should responsive wait be on/off for this specific robot? Overrides the fleet-wide setting. 
+
+    tinyRobot3:
+        charger: "dock_3"
+        responsive_wait: True # Should responsive wait be on/off for this specific robot? Overrides the fleet-wide setting.
+
+    tinyRobot4:
+        charger: "dock_4"
+        responsive_wait: True # Should responsive wait be on/off for this specific robot? Overrides the fleet-wide setting.
+
+    tinyRobot5:
+        charger: "dock_5"
+        responsive_wait: True # Should responsive wait be on/off for this specific robot? Overrides the fleet-wide setting.
+
+    tinyRobot6:
+        charger: "dock_6"
+        responsive_wait: True # Should responsive wait be on/off for this specific robot? Overrides the fleet-wide setting. 
+
+    tinyRobot7:
+        charger: "dock_7"
+        responsive_wait: True # Should responsive wait be on/off for this specific robot? Overrides the fleet-wide setting.
+
+    tinyRobot8:
+        charger: "dock_8"
+        responsive_wait: True # Should responsive wait be on/off for this specific robot? Overrides the fleet-wide setting.
+   
+    tinyRobot9:
+        charger: "dock_9"
+        responsive_wait: True # Should responsive wait be on/off for this specific robot? Overrides the fleet-wide setting.
+
+    tinyRobot10:
+        charger: "dock_10"
+        responsive_wait: True # Should responsive wait be on/off for this specific robot? Overrides the fleet-wide setting. 
+
+    tinyRobot11:
+        charger: "dock_11"
+        responsive_wait: True # Should responsive wait be on/off for this specific robot? Overrides the fleet-wide setting.
+
+    tinyRobot12:
+        charger: "dock_12"
+        responsive_wait: True # Should responsive wait be on/off for this specific robot? Overrides the fleet-wide setting.
+
+    tinyRobot13:
+        charger: "dock_13"
+        responsive_wait: True # Should responsive wait be on/off for this specific robot? Overrides the fleet-wide setting.
+
+    tinyRobot14:
+        charger: "dock_14"
+        responsive_wait: True # Should responsive wait be on/off for this specific robot? Overrides the fleet-wide setting. 
+
+    tinyRobot15:
+        charger: "dock_15"
+        responsive_wait: True # Should responsive wait be on/off for this specific robot? Overrides the fleet-wide setting.
+
+    tinyRobot16:
+        charger: "dock_16"
+        responsive_wait: True # Should responsive wait be on/off for this specific robot? Overrides the fleet-wide setting.
+
+    tinyRobot17:
+        charger: "dock_17"
+        responsive_wait: True # Should responsive wait be on/off for this specific robot? Overrides the fleet-wide setting.
+
+    tinyRobot18:
+        charger: "dock_18"
+        responsive_wait: True # Should responsive wait be on/off for this specific robot? Overrides the fleet-wide setting. 
+
+    tinyRobot19:
+        charger: "dock_19"
+        responsive_wait: True # Should responsive wait be on/off for this specific robot? Overrides the fleet-wide setting.
+
+    tinyRobot20:
+        charger: "dock_20"
+        responsive_wait: True # Should responsive wait be on/off for this specific robot? Overrides the fleet-wide setting.
+
+    tinyRobot21:
+        charger: "dock_21"
+        responsive_wait: True # Should responsive wait be on/off for this specific robot? Overrides the fleet-wide setting.
+
+    tinyRobot22:
+        charger: "dock_22"
+        responsive_wait: True # Should responsive wait be on/off for this specific robot? Overrides the fleet-wide setting.
+
+    tinyRobot23:
+        charger: "dock_23"
+        responsive_wait: True # Should responsive wait be on/off for this specific robot? Overrides the fleet-wide setting.
+
+    tinyRobot24:
+        charger: "dock_24"
+        responsive_wait: True # Should responsive wait be on/off for this specific robot? Overrides the fleet-wide setting.
 
 fleet_manager:
   ip: "127.0.0.1"
